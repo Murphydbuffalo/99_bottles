@@ -1,4 +1,5 @@
 require_relative './verse'
+require_relative './verses'
 
 class Bottles
   def verse(n = 0)
@@ -6,8 +7,7 @@ class Bottles
   end
 
   def verses(start, stop)
-    verse_numbers = (stop..start).to_a.reverse
-    verse_numbers.map { |num| verse(num) }.join("\n")
+    Verses.new(start, stop).to_s
   end
 
   def song
